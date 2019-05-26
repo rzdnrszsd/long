@@ -12,16 +12,25 @@ import java.util.Objects;
  * @return
  **/
 public class demo1 {
-    public static void main(String[] args)throws Exception {
+    public static void main(String[] args) throws Exception {
         Error error = new Error();
 
         Objects.requireNonNull(args);
         String fdsa = "";
 
-//        Exception exception = Exception.class;
 
-       Integer integer = new Integer(2);
-       integer.doubleValue();
+        Integer integer = new Integer(2);
+        integer.doubleValue();
+
+    }
+    /* 测试方法
+     * @author yangyonglong
+     * @date 2019-05-26
+     * @param
+     * @return
+     **/
+
+    public void test(String name,String age){
 
     }
 
