@@ -49,9 +49,9 @@ public class Demo {
 			declaredField.setAccessible(true);
 
 			Object type = declaredField.getType();
-//			if(!type.toString().equals("class java.lang.String")){
-//				continue;
-//			}
+			if(!type.toString().equals("class java.lang.String")){
+				continue;
+			}
 			methodName = declaredField.getName();
 
 			try {
