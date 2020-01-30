@@ -1,5 +1,6 @@
 package com.czy.reflect;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
@@ -9,6 +10,7 @@ import lombok.Data;
  * @date 2020-01-12 22:00
  **/
 @Data
+@AllArgsConstructor
 public class Hero {
 
 	private String name;

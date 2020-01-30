@@ -16,6 +16,10 @@ public class ADHero extends Hero {
 		System.out.println("AD Hero的构造方法");
 	}
 
+	public ADHero() {
+		super(null);
+	}
+
 	public static void main(String[] args) {
 		new ADHero("22");
 	}

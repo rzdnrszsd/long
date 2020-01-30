@@ -16,6 +16,7 @@ public class TestReflection {
 
 		try {
 			Field name = hero.getClass().getDeclaredField("name");
+			name.setAccessible(true);
 			name.set(hero,"aaa");
 			System.out.println(hero);
 

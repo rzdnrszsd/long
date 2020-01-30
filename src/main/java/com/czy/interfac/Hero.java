@@ -14,6 +14,10 @@ public class Hero {
 		System.out.println("Hero的构造方法！");
 	}
 
+	public Hero() {
+
+	}
+
 	public String getName(){
 		return this.name;
 	}
