@@ -47,9 +47,10 @@ public class MyStack<T> {
 		heroList.add(new ADHero());
 		Object object = heroList.get(0);
 
-		//如果🈶不插入，又不取出就用？
+		//如果🈶不插入，又不取出就用？ stream
 		List<?> anyList = new ArrayList<>();
 		Object o = anyList.get(0);
+		Hero o1 = (Hero) anyList.get(0);
 
 		// 子类转父类是可以的
 		ADHero adHero = new ADHero();
