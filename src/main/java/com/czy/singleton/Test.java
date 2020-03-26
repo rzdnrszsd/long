@@ -14,7 +14,5 @@ public class Test {
 		LazySingleton lazySingleton  = LazySingleton.getInstance();
 
 
-
-
 	}
 }

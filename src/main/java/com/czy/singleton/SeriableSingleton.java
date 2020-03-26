@@ -15,4 +15,9 @@ public class SeriableSingleton implements Serializable {
 	public static SeriableSingleton getINSTANCE() {
 		return INSTANCE;
 	}
+	private Object readResolve(){
+		return INSTANCE;
+	}
+
+
 }

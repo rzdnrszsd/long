@@ -23,7 +23,5 @@ public class LazyInnerClassSingleton {
 		private static final LazyInnerClassSingleton lazy = new LazyInnerClassSingleton();
 	}
 
-	private static class LazyHolder1{
-		private static final LazyInnerClassSingleton lazydouble = new LazyInnerClassSingleton();
-	}
+
 }

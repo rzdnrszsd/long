@@ -2,6 +2,7 @@ package com.czy.singleton;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 /**
@@ -18,7 +19,6 @@ public class SeriableSingletonTest {
 
 		FileOutputStream fileOutputStream  = new FileOutputStream("SeriableSingleton.obj");
 		ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-
 
 	}
 }
