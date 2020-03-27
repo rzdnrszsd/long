@@ -2,6 +2,10 @@ package com.czy.thread;
 
 import java.util.concurrent.CyclicBarrier;
 
+/**
+ *
+ * https://www.cnblogs.com/nsw2018/p/5821738.html
+ */
 public class TestSyncMethods {
 
     public static void test(int round, int threadNum, CyclicBarrier cyclicBarrier){
