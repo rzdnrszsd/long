@@ -1,0 +1,19 @@
+Java Memory Model
+
+并发编程中的两个问题：
+一、线程之间如何通信 ？wait();notify();notifyAll();
+    1、共享内存-隐式通信
+    2、消息传递-显示通信 
+
+二、线程之间如何同步
+
+
+volatile synchronized区别：
+    volatile仅能使用在变量上，synchronized可以使用在变量和方法上；
+    volatile仅能实现变量的可见性，不能保证原子性，synchronized可以保证变量的可见性和原子性；
+    volatile不会造成线程阻塞，synchronized可能会造成线程阻塞（因为volatile只是将当前变量的值及时告知所有线程，而synchronized是锁定当前变量不让其它线程访问）；
+    volatile标记的变量不会被编译器优化（因为不能指令重排），synchronized标记的变量可以被编译器优化；
+    volatile修饰变量适合于一写多读的并发场景，而多写场景一定会产生线程安全问题（因此使用volatile而不是synchronized的唯一安全情况是类中只有一个可变的域）。
+    因为所有的操作都需要同步给内存变量，所以volatile一定会使线程的执行速度变慢。
+    https://www.cnblogs.com/kaleidoscope/p/9506018.html
+ 
