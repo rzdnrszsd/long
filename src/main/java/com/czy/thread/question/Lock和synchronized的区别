@@ -1,0 +1,29 @@
+synchronized锁住的代码块在JVM编译成class文件的时候会有一个monitorenter 和monitorexit 来控制
+
+
+Lock 和 synchronized 的区别：
+    java5以后出现的，java.util.concurrent.locks包
+    1.synchronized是一个关键字，而Lock是一个接口
+    2.synchronized无法判断是否获取锁的状态，Lock可以判断是否获取到锁；
+    3.synchronized会自动释放锁(a 线程执行完同步代码会释放锁 ；b 线程执行过程中发生异常会释放锁)，
+      Lock需在finally中手工释放锁（unlock()方法释放锁），否则容易造成线程死锁；
+    4.Lock锁适合大量同步的代码的同步问题，synchronized锁适合代码少量的同步问题。
+
+1、synchronized什么时候释放
+  a.获取锁的线程执行完了该代码块
+  b.线程执行出现异常
+
+2、synchronized的缺陷
+  Lock可以去主动释放锁
+  而synchronized是被动的
+
+  ReadWriteLock
+  readLock和writeLock
+
+  ReentrantLock可重入锁；synchronized也是可重入锁
+  可中断锁
+  公平锁:等待时间越长，活得锁的几率越高
+  读写锁：
+  ReentrantReadWriteLock：可重入的读写锁
+  参考：
+  https://www.cnblogs.com/handsomeye/p/5999362.html

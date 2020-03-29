@@ -1,4 +1,8 @@
-package com.czy.thread;
+package com.czy.thread.lock;
+
+import com.czy.thread.lock.AtomicTest;
+import com.czy.thread.lock.LockTest;
+import com.czy.thread.lock.SyncTest;
 
 import java.util.concurrent.CyclicBarrier;
 

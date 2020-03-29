@@ -1,4 +1,4 @@
-package com.czy.thread;
+package com.czy.thread.lock;
 
 import java.util.Random;
 import java.util.concurrent.BrokenBarrierException;
