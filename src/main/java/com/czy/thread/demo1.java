@@ -32,6 +32,12 @@ public class demo1 {
 
     public void test(String name,String age){
 
+        if(true){
+            System.out.println("来吃饭");
+        }else{
+            System.out.println("原因：....");
+        }
+
     }
 
 }

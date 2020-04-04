@@ -1,5 +1,10 @@
 package com.czy.singleton;
 
+import cn.hutool.core.bean.BeanUtil;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author yangyonglong
  * @version 1.0
@@ -11,8 +16,11 @@ public class Test {
 
 		HungrySingleton hungrySingleton = HungrySingleton.getHungrySingleton();
 
-		LazySingleton lazySingleton  = LazySingleton.getInstance();
+		LazySingleton lazySingleton = LazySingleton.getInstance();
+		Map map = new HashMap<>();
 
+		map.put(null, null);
+//		BeanUtil.copyProperties();
 
 	}
 }

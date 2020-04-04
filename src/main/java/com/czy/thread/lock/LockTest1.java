@@ -29,19 +29,31 @@ public class LockTest1 {
 
         // 2.尝试获取锁 tryLock() 它表示用来尝试获取锁，如果获取成功，则返回true，
         // 如果获取失败（即锁已被其他线程获取），则返回false
-        if (lock.tryLock(3000, TimeUnit.MILLISECONDS)) {
-            try {
-                System.out.println("线程名" + thread.getName() + "获得了锁");
-                Thread.sleep(2000);//为看出执行效果，是线程此处休眠2秒
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-                System.out.println("线程名" + thread.getName() + "释放了锁");
-                lock.unlock();
-            }
-        }else{
-            System.out.println("我是" + Thread.currentThread().getName() + "有人占着锁。");
+//        if (lock.tryLock(3000, TimeUnit.MILLISECONDS)) {
+//            try {
+//                System.out.println("线程名" + thread.getName() + "获得了锁");
+//                Thread.sleep(2000);//为看出执行效果，是线程此处休眠2秒
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            } finally {
+//                System.out.println("线程名" + thread.getName() + "释放了锁");
+//                lock.unlock();
+//            }
+//        }else{
+//            System.out.println("我是" + Thread.currentThread().getName() + "有人占着锁。");
+//        }
+
+        lock.lockInterruptibly();
+        try {
+
+            System.out.println("线程名" + thread.getName() + "获得了锁");
+//            Thread.sleep(2000);//为看出执行效果，是线程此处休眠2秒
+        }  finally {
+            System.out.println("线程名" + thread.getName() + "释放了锁");
+            lock.unlock();
         }
+
+
 
     }
 
@@ -49,22 +61,31 @@ public class LockTest1 {
         final LockTest1 lockTest = new LockTest1();
 
         Thread thread1 = new Thread(new Runnable() {
-            @SneakyThrows
             @Override
             public void run() {
-                lockTest.method(Thread.currentThread());
+                try {
+                    lockTest.method(Thread.currentThread());
+                } catch (InterruptedException e) {
+                    System.out.println(Thread.currentThread().getName()+"被中断");
+                }
             }
         }, "t1");
 
         Thread thread2 = new Thread(new Runnable() {
-            @SneakyThrows
             @Override
             public void run() {
-                lockTest.method(Thread.currentThread());
+                try {
+                    lockTest.method(Thread.currentThread());
+                } catch (InterruptedException e) {
+                    System.out.println(Thread.currentThread().getName()+"被中断");
+                }
+
             }
         }, "t2");
 
         thread1.start();
         thread2.start();
+        Thread.sleep(10000);
+        thread2.interrupt();
     }
 }

@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
- *
+ * JDK动态代理
  * /**
  *
  * @author yangyonglong
@@ -31,4 +31,7 @@ public class AutoProxy implements InvocationHandler {
         System.out.println("动态代理执行完成");
         return object;
     }
+
+
+
 }

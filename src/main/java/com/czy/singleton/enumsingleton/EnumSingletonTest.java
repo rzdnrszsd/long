@@ -33,10 +33,11 @@ public class EnumSingletonTest {
 //		System.out.println(instance1==instance2);
 
 //		EnumSingleton enumSingleton = EnumSingleton.INSTANCE;
-		EnumSingleton.INSTANCE.setData(new SingletonEntity());
-		System.out.println(EnumSingleton.INSTANCE.getData());
+//		EnumSingleton.INSTANCE.setData(new SingletonEntity());
+//		EnumSingleton.INSTANCE.setData(new Object());
+		System.out.println(EnumSingleton.INSTANCE.getInstance());
 
-		System.out.println(EnumSingleton.INSTANCE.getData());
+		System.out.println(EnumSingleton.INSTANCE.getInstance());
 		if (1 == 2) {
 			System.out.println("1");
 		} else {

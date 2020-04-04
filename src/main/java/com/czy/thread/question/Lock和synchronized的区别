@@ -22,7 +22,7 @@ Lock 和 synchronized 的区别：
 
   ReentrantLock可重入锁；synchronized也是可重入锁
   可中断锁
-  公平锁:等待时间越长，活得锁的几率越高
+  公平锁:等待时间越长，获得锁的几率越高
   读写锁：
   ReentrantReadWriteLock：可重入的读写锁
   参考：

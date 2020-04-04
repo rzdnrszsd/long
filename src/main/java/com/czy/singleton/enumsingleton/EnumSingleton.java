@@ -20,8 +20,13 @@ public enum EnumSingleton {
 	public void setData(SingletonEntity data) {
 		this.data = data;
 	}
-	public EnumSingleton getInstance(){
-		return INSTANCE;
+
+	 EnumSingleton(){
+		data = new SingletonEntity();
+	}
+
+	public SingletonEntity getInstance(){
+		return  data;
 	}
 }
 
