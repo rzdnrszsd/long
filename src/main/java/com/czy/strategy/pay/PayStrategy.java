@@ -18,23 +18,22 @@ public class PayStrategy {
 	public static final String DEFUALT = UNION_PAY;
 
 
-	private static Map<String,Payment> paymentMap = new HashMap<>();
+	private static Map<String, Payment> paymentMap = new HashMap<>();
 
 	static {
-		paymentMap.put(ALI_PAY,new AliPay());
-		paymentMap.put(WECHAT_PAY,new WeChatPay());
-		paymentMap.put(UNION_PAY,new UnionPay());
-		paymentMap.put(JD_PAY,new JDPay());
+		paymentMap.put(ALI_PAY, new AliPay());
+		paymentMap.put(WECHAT_PAY, new WeChatPay());
+		paymentMap.put(UNION_PAY, new UnionPay());
+		paymentMap.put(JD_PAY, new JDPay());
 	}
 
-	public static Payment getPay(String payKey){
-		if(!paymentMap.containsKey(payKey)){
+	public static Payment getPay(String payKey) {
+		if (!paymentMap.containsKey(payKey)) {
 			return paymentMap.get(DEFUALT);
 		}
 		return paymentMap.get(payKey);
 
 	}
-
 
 
 }
