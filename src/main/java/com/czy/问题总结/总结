@@ -192,7 +192,6 @@ Java基础相关：
 委派模式：Spring提供了DispatcherServlet来对请求进行分发
 
 
-
 适配器模式：
     在不改变要适配的类的前提下，复用该类；
     让目标类和适配器类解耦
@@ -225,6 +224,12 @@ Java基础相关：
 工厂模式：BeanFactory用来创建对象的实例，贯穿 BF和ApplicationContext接口
 
 
+观察者模式：
+    主题；观察者。
+    主题实现Observable,而观察者实现Observer接口
+    当主题想要同志观察者的时候就调用主题的方法（主要是setChanged;notifyAllObservers）来通知观察者。
+
+    而订阅-发布模式则是主题把内容放到一个中间容器中，观察者需要就自己去容器中读取数据。
 
 
 建造者模式：
