@@ -9,6 +9,7 @@ import java.util.Observer;
  * @className Teacher
  * @date 2020-04-04 23:54
  **/
+
 public class Teacher implements Observer {
 
 	private String name;
